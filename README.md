@@ -1,33 +1,31 @@
-# Landing Page Demo — Clínica Aurora Premium
+# Clínica Aurora — Landing Page Odontológica
 
-Versão mais detalhada e animada da landing page fictícia para dentistas e clínicas odontológicas.
+Landing page demonstrativa desenvolvida para clínicas e profissionais de odontologia, com foco em apresentação profissional, responsividade e conversão de visitantes em contatos pelo WhatsApp.
 
-## Recursos
-- Hero premium com elementos flutuantes
-- Animações de entrada ao rolar a página
-- Contadores animados
-- Cards com hover
-- Galeria visual
-- Slider de depoimentos
-- FAQ em acordeão
-- Botão voltar ao topo
-- Botão flutuante de WhatsApp
-- Menu mobile
-- Efeito de inclinação na imagem principal
-- Loader inicial
+## Tecnologias
+
+- HTML
+- CSS
+- JavaScript
+
+## Funcionalidades
+
 - Layout responsivo
+- Animações ao rolar a página
+- Seções de serviços e diferenciais
+- FAQ interativo
+- Botão flutuante do WhatsApp
+- Menu mobile
+- Design moderno e profissional
 
-## Personalização
-Troque no `index.html`:
-- Nome da clínica
-- Nome do profissional
-- CRO
-- WhatsApp fictício `5577999999999`
-- Endereço
-- Horários
-- Tratamentos
-- Textos
-- Imagens
+## Demonstração
 
-## Observação
-Os dados, depoimentos e números são fictícios e servem apenas para demonstração comercial.
+Projeto criado para fins de portfólio e apresentação comercial.
+
+> Os dados, contatos e informações apresentados são fictícios.
+
+## Desenvolvedor
+
+**Sule Sampaio**
+
+GitHub: `@Sule-Sampaio`
