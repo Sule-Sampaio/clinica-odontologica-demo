@@ -5,9 +5,11 @@ window.addEventListener("load", () => {
 
 const header = document.querySelector(".header");
 const backToTop = document.querySelector(".back-to-top");
+const whatsappFloat = document.querySelector(".whatsapp-float");
 window.addEventListener("scroll", () => {
   header?.classList.toggle("scrolled", window.scrollY > 20);
   backToTop?.classList.toggle("show", window.scrollY > 500);
+  whatsappFloat?.classList.toggle("show", window.scrollY > 360);
 });
 
 backToTop?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
@@ -17,9 +19,14 @@ const nav = document.querySelector(".nav-links");
 btn?.addEventListener("click", () => {
   const open = nav.classList.toggle("open");
   btn.setAttribute("aria-expanded", open ? "true" : "false");
+  btn.textContent = open ? "×" : "☰";
 });
 document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => nav.classList.remove("open"));
+  link.addEventListener("click", () => {
+    nav.classList.remove("open");
+    btn?.setAttribute("aria-expanded", "false");
+    if (btn) btn.textContent = "☰";
+  });
 });
 
 const observer = new IntersectionObserver((entries) => {

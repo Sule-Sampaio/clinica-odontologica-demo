@@ -31,3 +31,8 @@ Troque no `index.html`:
 
 ## Observação
 Os dados, depoimentos e números são fictícios e servem apenas para demonstração comercial.
+
+### Ajustes mobile
+- Tipografia e espaçamento otimizados para telas pequenas
+- Menu mobile compacto com botão de fechar
+- WhatsApp flutuante exibido somente após rolagem
