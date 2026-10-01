@@ -263,3 +263,73 @@ button{font:inherit}
     transform: translateY(0) scale(1);
   }
 }
+
+/* ===== Menu mobile lateral ===== */
+@media (max-width: 640px) {
+  body.menu-open { overflow: hidden; }
+
+  .mobile-menu-backdrop {
+    position: fixed;
+    inset: 72px 0 0 0;
+    background: rgba(12, 31, 35, .42);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .28s ease, visibility .28s ease;
+    z-index: 70;
+  }
+
+  .mobile-menu-backdrop.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .header { z-index: 100; }
+
+  .menu-toggle {
+    position: relative;
+    z-index: 110;
+  }
+
+  .nav-links {
+    display: flex;
+    position: fixed;
+    top: 72px;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: min(82vw, 330px);
+    max-height: none;
+    padding: 26px 22px 30px;
+    gap: 8px;
+    background: #f7f4ef;
+    border-left: 1px solid var(--line);
+    border-bottom: 0;
+    box-shadow: -18px 0 42px rgba(23,52,59,.16);
+    overflow-y: auto;
+    transform: translateX(105%);
+    opacity: 1;
+    visibility: visible;
+    transition: transform .32s cubic-bezier(.22,.8,.24,1);
+    z-index: 90;
+  }
+
+  .nav-links.open { transform: translateX(0); }
+
+  .nav-links > a:not(.btn) {
+    padding: 13px 12px;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+
+  .nav-links > a:not(.btn):active {
+    background: rgba(31,111,120,.08);
+  }
+
+  .nav-links .btn {
+    margin-top: 10px;
+    padding: 14px 18px;
+  }
+}

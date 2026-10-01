@@ -16,17 +16,27 @@ backToTop?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "
 
 const btn = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".nav-links");
-btn?.addEventListener("click", () => {
-  const open = nav.classList.toggle("open");
-  btn.setAttribute("aria-expanded", open ? "true" : "false");
-  btn.textContent = open ? "×" : "☰";
-});
+const menuBackdrop = document.createElement("div");
+menuBackdrop.className = "mobile-menu-backdrop";
+document.body.appendChild(menuBackdrop);
+
+function setMenu(open) {
+  nav?.classList.toggle("open", open);
+  menuBackdrop.classList.toggle("show", open);
+  document.body.classList.toggle("menu-open", open);
+  btn?.setAttribute("aria-expanded", open ? "true" : "false");
+  if (btn) btn.textContent = open ? "×" : "☰";
+}
+
+btn?.addEventListener("click", () => setMenu(!nav?.classList.contains("open")));
+menuBackdrop.addEventListener("click", () => setMenu(false));
+
 document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => {
-    nav.classList.remove("open");
-    btn?.setAttribute("aria-expanded", "false");
-    if (btn) btn.textContent = "☰";
-  });
+  link.addEventListener("click", () => setMenu(false));
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 640) setMenu(false);
 });
 
 const observer = new IntersectionObserver((entries) => {
